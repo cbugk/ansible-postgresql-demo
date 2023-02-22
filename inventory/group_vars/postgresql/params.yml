@@ -5,6 +5,8 @@ postgres_users_no_log: false
 postgresql_global_config_options:
   - option: listen_address
     value: '{{ postgresql_global_listen_addresses }}'
+  - option: log_directory
+    value: 'log'
 
 postgresql_hba_entries:
   - { type: local, database: all, user: postgres, auth_method: peer }
