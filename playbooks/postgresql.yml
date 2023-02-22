@@ -1,0 +1,18 @@
+---
+- hosts: '{{ var_hosts }}'
+  pre_tasks:
+    - name: Update APT
+      become: yes
+      ansible.builtin.apt:
+        update_cache: yes
+  tasks:
+    - name: Role Pip
+      include_role:
+        name: geerlingguy.pip
+        apply:
+          become: yes
+    - name: Role Postgresql
+      include_role:
+        name: geerlingguy.postgresql
+        apply:
+          become: yes

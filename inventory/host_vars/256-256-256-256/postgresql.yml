@@ -1,0 +1,4 @@
+---
+postgresql_db: db
+postgresql_db_user: dbuser
+postgresql_db_password: 'dbpassword'
