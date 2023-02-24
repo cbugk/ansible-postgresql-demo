@@ -3,7 +3,7 @@ postgresql_global_listen_addresses: 'localhost,{{ ansible_host }}'
 postgres_users_no_log: false
 
 postgresql_global_config_options:
-  - option: listen_address
+  - option: listen_addresses
     value: '{{ postgresql_global_listen_addresses }}'
   - option: log_directory
     value: 'log'
