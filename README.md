@@ -123,9 +123,11 @@ Example host is given a non-existing IP address `256.256.256.256` on purpose. It
 
 Above changes should effectively change a host's address. Any further variables defined on top of this template would require to be documented of course.
 
-In this case, it is the PostgreSQL's listen addres being same as the host address used for SSH by Ansible. Later, one may desire to keep the listen address same while adding another network interface for managing the machine. In such case following line from `./inventory/group_vars/postgresql/params.yml` requires attention, as the original assumption is broken:
+In this case, it is the PostgreSQL's listen addres being same as the host address used for SSH by Ansible. Later, one may desire to keep the listen address same while adding another network interface for managing the machine. In such case following variable from `./inventory/group_vars/postgresql/params.yml` requires attention, as the original assumption is broken:
 
-		postgresql_global_listen_addresses: 'localhost,{{ ansible_host }}'
+		postgresql_listen_addresses:
+		  - localhost
+		  - '{{ ansible_host }}'
 
 ### Requirements YAML
 
