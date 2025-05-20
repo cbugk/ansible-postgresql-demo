@@ -3,5 +3,4 @@
 
 - name: geerlingguy.postgresql
   src: https://github.com/geerlingguy/ansible-role-postgresql.git
-  scm: git
-  version: e8db6bb5c8632f99eb486f35a314377e95d0bce5
+  version: 4.0.0
